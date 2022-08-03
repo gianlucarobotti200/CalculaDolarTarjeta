@@ -13,11 +13,26 @@
 </head>
 <body>
     <header>
-        <img src="img/money.png" alt="">
+        <nav>
+            <div class="navbar">
+              <div class="container nav-container">
+                  <input class="checkbox" type="checkbox" name="" id="" />
+                  <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                  </div>  
+                <div class="menu-items">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#">Impuestos</a></li>
+                  <li><a href="#">Más Info</a></li>
+                  <li><a href="#">Contacto</a></li>
+                </div>
+              </div>
+            </div>
+          </nav>
     </header>
     <main>
-        <script src="index.js"> 
-        </script>
         <section class="flags">
             <img src="img/estados-unidos.png" alt="">
             <i class="fa-solid fa-arrows-rotate"></i>
@@ -25,7 +40,7 @@
         </section>
         <section class="data">
             <form name="dolartospend">
-                <label for="money"><img class="flag-form" src="img/estados-unidos.png" alt=""><input class="in-dollar" type="text" id="money" name="money" placeholder="Ingresar dólares" onchange="getDolars()"></label>
+                <label for="money">U$D<input class="in-dollar" type="text" id="money" name="money" placeholder="Ingresar dólares" onchange="getDolars()"></label>
                 
                 <label for="pesosinimp">Pesos sin impuesto: $<input class="out" type="text" name="pesosinimp" id="pesosinimp"></label>
 
@@ -33,13 +48,16 @@
                 
                 <label for="ret">Retención del 45%: $<input class="out" type="text" name="ret" id="ret"></label>
                 
-                <label for="total">Total en pesos con impuesto: $<input class="out" type="text" name="total" id="total"></label>
+                <label for="total">Total con impuestos: $<input class="out" type="text" name="total" id="total"></label>
             </form>
         </section>
         
     </main>
     <footer>
-        
+        <p>Todos los derechos reservados a Gianluca Robotti</p>
+        <a href="https://github.com/gianlucarobotti200" target="_blank"><i class="fa-brands fa-github"></i></a>
     </footer>
+    <script src="index.js"> 
+    </script>
 </body>
 </html>
