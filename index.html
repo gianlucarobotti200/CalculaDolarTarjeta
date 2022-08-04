@@ -35,36 +35,36 @@
       </div>
     </nav>
   </header>
+  
   <main>
     <section class="flags">
       <img src="img/estados-unidos.png" alt="">
       <i class="fa-solid fa-arrows-rotate"></i>
       <img class="flag" src="img/argentina.png" alt="">
     </section>
+    
     <section class="data">
       <span id="cotizacion" class="cotizacion">Dólar hoy: Cargando...</span>
+      
       <form name="dolartospend">
-
-        <label for="money">U$D<input class="in-dollar" type="number" id="money" name="money"
-            placeholder="Ingresar dólares" onchange="getDolars()"></label>
-
+        <label for="money">U$D<input class="in-dollar" type="number" id="money" name="money" placeholder="Ingresar dólares" onchange="getDolars()"></label>
       </form>
+      
       <div class="lista">
         <span id="pesosinimp">Pesos sin impuesto: $</span>
         <span id="imppais">Impuesto país 30%: $</span>
         <span id="ret">Retención del 45%: $</span>
         <span id="total">Total con impuestos: $</span>
       </div>
-      
     </section>
-
   </main>
+
   <footer>
     <p>Todos los derechos reservados a Gianluca Robotti</p>
     <a href="https://github.com/gianlucarobotti200" target="_blank"><i class="fa-brands fa-github"></i></a>
   </footer>
-  <script src="index.js">
-  </script>
+  
+  <script src="index.js"></script>
 </body>
 
 </html>

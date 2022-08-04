@@ -6,6 +6,9 @@ body {
   margin: 0;
   background-color: #014e96;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-family: "Be Vietnam Pro", sans-serif;
 }
 
@@ -246,5 +249,21 @@ footer i{
   .cotizacion {
     color:grey;
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 380px){
+  body{
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 300px){
+  body{
+    font-size: 0.6rem;
+  }
+
+  section.flags img {
+    width: 3.5rem;
   }
 }

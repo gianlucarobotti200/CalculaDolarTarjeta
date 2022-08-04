@@ -1,6 +1,7 @@
 let dolar = 0;
 
 const listValues = async () => {
+    
     const dolarDia = await fetch('https://www.dolarsi.com/api/api.php?type=dolar');
     const values = await dolarDia.json();
     console.log("funcion listValues: " + values[0].casa.venta)
@@ -15,7 +16,6 @@ window.addEventListener("load", function(){
 
 function getDolars(){
     
-    dolar = (parseFloat(dolar.replace(",", "."))).toFixed(2);
     console.log("funcion getDolars " + dolar);
     
     if (document.getElementById('money').value == "") {
@@ -23,8 +23,8 @@ function getDolars(){
     }
     
     let pesos = ((parseFloat(document.getElementById('money').value))*dolar).toFixed(2);
-    let objPesos = document.getElementById("pesosinimp")
-    objPesos.innerText = `Pesos sin impuesto: $${pesos}`
+    let objPesos = document.getElementById("pesosinimp");
+    objPesos.innerText = `Pesos sin impuesto: $${pesos}`;
     
     let impPais = (pesos*.30).toFixed(2);
     let objImpPais = document.getElementById("imppais");
@@ -32,10 +32,9 @@ function getDolars(){
 
     let ret = (pesos*.45).toFixed(2);
     let objRet = document.getElementById("ret");
-    objRet.innerText = `Retención del 45% $${ret}`;
+    objRet.innerText = `Retención del 45%: $${ret}`;
 
     let total = ((pesos*175)/100).toFixed(2);
     let objTotal = document.getElementById("total");
-    objTotal.innerText = `Total con impuestos: $${total}`;
-    
+    objTotal.innerText = `Total con impuestos: $${total}`;   
 }
