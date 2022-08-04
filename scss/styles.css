@@ -148,13 +148,12 @@ header img {
 }
 
 main{
-  padding: 20% 0;
+  height: 85vh;
 }
 
 main section.flags {
   display: flex;
   justify-content: center;
-  margin: 2rem;
 }
 main section.flags i {
   padding-top: 2rem;
@@ -174,14 +173,13 @@ main section.data form {
   align-items: center;
 }
 main section.data form label {
-  margin: 1rem;
+  margin: 1.2rem 0;
 }
-main section.data form label img {
-  width: 2rem;
-  position: relative;
-  top: 10px;
+.cotizacion {
+  color:grey;
+  font-size: 0.9rem;
 }
-main section.data form label::after {
+main section.data span::after {
   content: "?";
   color: #014e96;
   border-radius: 50px;
@@ -194,38 +192,59 @@ main section.data form label::after {
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
 }
-main section.data form label input {
-  width: 20vw;
-  border-radius: 50px;
-  border-style: none;
-  background-color: #014e96;
-  color: white;
-  font-family: "Be Vietnam Pro", sans-serif;;
-}
 main section.data form label input.in-dollar {
   margin-left: 0.5rem;
-  width: 20vw;
+  width: 30vw;
   border-radius: 50px;
   border-style: none;
   background-color: white;
   color: black;
+  padding-left: .5rem;
+}
+div.lista {
+  display: flex;
+  flex-direction: column;
+}
+div.lista span{
+  margin: 1.5rem 0;
 }
 /*# sourceMappingURL=styles.css.map */
-
 footer {
   display: flex;
   justify-content: center;
 }
-
 footer p {
   font-size: 10px;
 }
-
 footer a{
   color: white;
 }
-
 footer i{
   padding-top: 0.5rem;
   margin-left: 1rem;
+}
+
+@media (min-width: 481px){
+  body {
+    font-size: 1.5rem;
+  }
+
+  input {
+    font-size: 1.5rem;
+  }
+
+  main section.data form label input.in-dollar {
+    margin-left: 0.5rem;
+    width: 60%;
+    border-radius: 50px;
+    border-style: none;
+    background-color: white;
+    color: black;
+    padding-left: 1rem;
+  }
+
+  .cotizacion {
+    color:grey;
+    font-size: 1.5rem;
+  }
 }
