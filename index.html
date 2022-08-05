@@ -44,10 +44,12 @@
     </section>
     
     <section class="data">
-      <span id="cotizacion" class="cotizacion">Dólar hoy: Cargando...</span>
-      
+      <span id="cotizacion" class="cotizacion">Dólar Oficial hoy: Cargando...</span>
+      <br><a href="">Ver cotizaciones</a>
       <form name="dolartospend">
-        <label for="money">U$D<input class="in-dollar" type="number" id="money" name="money" placeholder="Ingresar dólares" onchange="getDolars()"></label>
+        <button id="usd" type="reset">U$D</button>
+        <button id="ars" type="reset">AR$</button>
+        <input class="in-dollar" type="number" min="0" id="money" name="money" placeholder="Ingresar dólares" onchange="getDolars()">
       </form>
       
       <div class="lista">
