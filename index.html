@@ -46,7 +46,7 @@
     <section class="data">
       <span id="cotizacion" class="cotizacion">Dólar Oficial hoy: Cargando...</span>
       <br><a href="">Ver cotizaciones</a>
-      <form name="dolartospend">
+      <form name="dolartospend" onsubmit="return false;">
         <button id="usd" type="reset">U$D</button>
         <button id="ars" type="reset">AR$</button>
         <input class="in-dollar" type="number" min="0" id="money" name="money" placeholder="Ingresar dólares" onchange="getDolars()">
