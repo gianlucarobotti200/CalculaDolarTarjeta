@@ -7,7 +7,8 @@ const listValues = async () => {
     console.log("funcion listValues: " + values[0].casa.venta)
     dolar = (parseFloat(values[0].casa.venta.replace(",", "."))).toFixed(2);
     let objDolar = document.getElementById("cotizacion");
-    objDolar.innerText = `Dólar Oficial hoy: $${dolar}`
+    objDolar.innerText = `Dólar Oficial hoy: AR$ ${dolar}`
+
 };
 
 window.addEventListener("load", function(){
@@ -17,19 +18,19 @@ window.addEventListener("load", function(){
 function getPesos(){
     let pesos = ((parseFloat(document.getElementById('money').value))).toFixed(2);
     let objPesos = document.getElementById("pesosinimp");
-    objPesos.innerText = `Pesos sin impuesto: $${pesos}`;
+    objPesos.innerText = `Pesos sin impuesto: AR$ ${pesos}`;
     console.log("funcion getPesos " + pesos);
     let impPais = (pesos*.30).toFixed(2);
     let objImpPais = document.getElementById("imppais");
-    objImpPais.innerText = `Impuesto país 30%: $${impPais}`;
+    objImpPais.innerText = `Impuesto país 30%: AR$ ${impPais}`;
 
     let ret = (pesos*.45).toFixed(2);
     let objRet = document.getElementById("ret");
-    objRet.innerText = `Retención del 45%: $${ret}`;
+    objRet.innerText = `Retención del 45%: AR$ ${ret}`;
 
     let total = ((pesos*175)/100).toFixed(2);
     let objTotal = document.getElementById("total");
-    objTotal.innerText = `Total con impuestos: $${total}`;
+    objTotal.innerText = `Total con impuestos: AR$ ${total}`;
 }
 
 function getDolars(){
@@ -42,33 +43,34 @@ function getDolars(){
     
     let pesos = ((parseFloat(document.getElementById('money').value))*dolar).toFixed(2);
     let objPesos = document.getElementById("pesosinimp");
-    objPesos.innerText = `Pesos sin impuesto: $${pesos}`;
+    objPesos.innerText = `Pesos sin impuesto: AR$ ${pesos}`;
     
     let impPais = (pesos*.30).toFixed(2);
     let objImpPais = document.getElementById("imppais");
-    objImpPais.innerText = `Impuesto país 30%: $${impPais}`;
+    objImpPais.innerText = `Impuesto país 30%: AR$ ${impPais}`;
 
     let ret = (pesos*.45).toFixed(2);
     let objRet = document.getElementById("ret");
-    objRet.innerText = `Retención del 45%: $${ret}`;
+    objRet.innerText = `Retención del 45%: AR$ ${ret}`;
 
     let total = ((pesos*175)/100).toFixed(2);
     let objTotal = document.getElementById("total");
-    objTotal.innerText = `Total con impuestos: $${total}`;   
+    objTotal.innerText = `Total con impuestos: AR$ ${total}`;   
 }
 
-document.getElementById("ars").addEventListener("click", function(){
+document.getElementById("moneda").addEventListener("click", function(){
     console.log("holis");
-    let inPesos = document.querySelector(".in-dollar");
-    inPesos.placeholder = "Ingresar pesos";
-    inPesos.setAttribute("onchange", "getPesos()");
-    
-})
-
-document.getElementById("usd").addEventListener("click", function(){
-    console.log("holis");
-    let inDolars = document.querySelector(".in-dollar");
-    inDolars.placeholder = "Ingresar dólares";
-    inDolars.setAttribute("onchange", "getDolars()");
-    
+    let inValue = document.querySelector(".in-dollar");
+    let e = document.getElementById("moneda");
+    let monedaValue = e.value;
+    console.log("Hola: " + monedaValue);
+    if (monedaValue==2){
+        inValue.placeholder = "Ingresar pesos";
+        inValue.setAttribute("onchange", "getPesos()");
+        document.querySelector('.in-dollar').value = '';
+    } else{
+        inValue.placeholder = "Ingresar dólares";
+        inValue.setAttribute("onchange", "getDolars()");
+        document.querySelector('.in-dollar').value = '';
+    }
 })

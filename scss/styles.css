@@ -202,20 +202,18 @@ button {
   -o-transition: 0.5s;
 }
 
-button:hover{
-  transform: scale(1.1);
-  border: solid 3px #0e2431;
+input.change:hover, input.change:focus{
   background: var(--blueleft);
 }
 
 input {
   margin-left: 0.5rem;
-  width: 15rem;
   border-radius: 50px;
   border-style: none;
   background-color: white;
   color: black;
   padding-left: .5rem;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
 main section.data span::after {

@@ -45,10 +45,12 @@
     
     <section class="data">
       <span id="cotizacion" class="cotizacion">Dólar Oficial hoy: Cargando...</span>
-      <br><a href="">Ver cotizaciones</a>
-      <form name="dolartospend">
-        <button id="usd" type="reset">U$D</button>
-        <button id="ars" type="reset">AR$</button>
+      <br><a href="views/cotizaciones.html">Ver cotizaciones</a>
+      <form name="dolartospend" onsubmit="return false;">
+        <select id="moneda">
+          <option value="1" type="reset">U$D</option>
+          <option value="2" type="reset">AR$</option>
+        </select>
         <input class="in-dollar" type="number" min="0" id="money" name="money" placeholder="Ingresar dólares" onchange="getDolars()">
       </form>
       
