@@ -151,10 +151,11 @@ header {
 header img {
   width: 3rem;
 }
-
 main{
   height: 85vh;
 }
+
+
 
 main section.flags {
   display: flex;
@@ -168,8 +169,11 @@ main section.flags i {
 main section img {
   width: 5rem;
 }
+main section.data a{
+  color: white;
+}
 main section.data {
-  margin: 3rem;
+  margin: 1.5rem;
   text-align: center;
 }
 main section.data form {
@@ -183,23 +187,16 @@ main section.data form {
   font-size: 0.9rem;
 }
 
-button {
-  border-radius: 40%;
-  -webkit-border-radius: 40%;
-  -moz-border-radius: 40%;
-  -ms-border-radius: 40%;
-  -o-border-radius: 40%;
+select {
   background-color: #01407c;
   color: white;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-style: none;
   font-family: "Be Vietnam Pro", sans-serif;
-  font-weight: 600;
-  border:solid 1px black;
-  padding: 0.5rem 1rem;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
 }
 
 input.change:hover, input.change:focus{
@@ -237,7 +234,7 @@ div.lista {
 div.lista span{
   margin: 5vh 0;
 }
-/*# sourceMappingURL=styles.css.map */
+
 footer {
   display: flex;
   justify-content: center;
@@ -256,11 +253,6 @@ footer i{
 @media (min-width: 481px){
   body {
     font-size: 1.5rem;
-  }
-
-  main {
-    position:relative;
-    top: 50px;
   }
 
   input {
