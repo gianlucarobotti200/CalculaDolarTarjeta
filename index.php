@@ -25,11 +25,11 @@
             <span class="line line3"></span>
           </div>
           <div class="menu-items">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="views/cotizaciones.html">Cotización</a></li>
-            <li><a href="views/impuestos.html">Impuestos</a></li>
-            <li><a href="views/info.html">Más Info</a></li>
-            <li><a href="views/sobremi.html">Contacto</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="views/cotizaciones.php">Cotización</a></li>
+            <li><a href="views/impuestos.php">Impuestos</a></li>
+            <li><a href="views/info.php">Más Info</a></li>
+            <li><a href="views/sobremi.php">Contacto</a></li>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
     
     <section class="data">
       <span id="cotizacion" class="cotizacion">Dólar Oficial hoy: Cargando...</span>
-      <br><a href="views/cotizaciones.html">Ver cotizaciones</a>
+      <br><a href="views/cotizaciones.php">Ver cotizaciones</a>
       <form name="dolartospend" onsubmit="return false;">
         <select id="moneda">
           <option value="1" type="reset">U$D</option>
