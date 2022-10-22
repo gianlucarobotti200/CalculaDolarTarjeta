@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>calculaDolar Argentina</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/162fed51d8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="navbar">
+				<div class="container nav-container">
+					<input class="checkbox" type="checkbox" name="" id="" />
+					<div class="hamburger-lines">
+						<span class="line line1"></span>
+						<span class="line line2"></span>
+						<span class="line line3"></span>
+					</div>
+					<div class="menu-items">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="views/cotizaciones.html">Cotización</a></li>
+						<li><a href="views/impuestos.html">Impuestos</a></li>
+						<li><a href="views/info.html">Más Info</a></li>
+						<li><a href="views/sobremi.html">Contacto</a></li>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<section class="flags">
+			<img src="img/paying-off-ccs_toolbox-removebg-preview.png">
+		</section>
+
+		<section class="data">
+			<span id="cotizacion" class="cotizacion">Dólar Oficial hoy: Cargando...</span>
+			<br><a href="views/cotizaciones.html">Ver cotizaciones</a>
+			<form name="dolartospend" onsubmit="return false;">
+				<label for="tipo-compra">Tipo de pago:
+					<select name="tipo-compra" id="tipo-compra">
+						<option value="1">Servicios digitales</option>
+						<option value="2"></option>
+						<option value="3"></option>
+					</select>
+				</label>
+				<label for="provincia">Seleccionar provincia:
+					<select name="provincia" id="provincia">
+						<option value="1">Ninguna de la lista</option>
+						<option value="2">CABA</option>
+						<option value="3">Buenos Aires</option>
+						<option value="4">Córdoba</option>
+						<option value="5">La Pampa</option>
+						<option value="6">Río Negro</option>
+						<option value="7">Salta</option>
+						<option value="8">Chaco</option>
+						<option value="9">Neuquén</option>
+					</select>
+				</label>
+				<label for="metodo-pago">Método de pago:
+					<select id="metodo-pago">
+						<option value="1">Tarjeta de Crédito</option>
+						<option value="2">Tarjeta de Débito</option>
+						<option value="3">Tarjeta Prepaga</option>
+					</select>
+				</label>
+				<label for="">
+					<select id="moneda">
+						<option value="1" type="reset">U$D</option>
+						<option value="2" type="reset">AR$</option>
+					</select>
+					<input class="in-dollar" type="number" step=".01" min="0" id="money" name="money" placeholder="Ingresar dólares" onchange="getDolars()">
+				</label>
+			</form>
+
+			<div class="lista">
+				<span id="pesosinimp">Pesos sin impuesto: $</span>
+				<span id="imppais">Impuesto país 30%: $</span>
+				<span id="ret">Retención Ganancias y BBPP 45%: $</span>
+				<span id="perc">Percepción de Ingresos Brutos % $</span>
+				<span id="sello">Impuesto a los sellos 1,2%</span>
+				<span id="total">Total con impuestos: $</span>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>Todos los derechos reservados a Gianluca Robotti</p>
+		<a href="https://github.com/gianlucarobotti200" target="_blank"><i class="fa-brands fa-github"></i></a>
+	</footer>
+
+	<script src="index.js"></script>
+</body>
+
+</html>

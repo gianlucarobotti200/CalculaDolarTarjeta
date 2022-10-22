@@ -1,21 +1,20 @@
 let dolar = 0;
 
 const listValues = async () => {
-    
+    //https://www.dolarsi.com/api/api.php?type=valoresprincipales Usar dps
     const dolarDia = await fetch('https://www.dolarsi.com/api/api.php?type=dolar');
-    const values = await dolarDia.json();
-    console.log("funcion listValues: " + values[0].casa.compra)
-    dolar = (parseFloat(values[0].casa.compra.replace(",", "."))).toFixed(2);
+    const dolarObj = await dolarDia.json();;
+    console.log("dolarDia: " + dolarObj[0].casa.compra)
+    dolar = (parseFloat(dolarObj[0].casa.compra.replace(",", "."))).toFixed(2);
     let objDolar = document.getElementById("cotizacion");
-    objDolar.innerText = `Dólar Oficial hoy: AR$ ${dolar}`
-
+    objDolar.innerText = `Dólar Oficial hoy: AR$ ${dolar}`  
 };
 
 window.addEventListener("load", function(){
     listValues();
 })
 
-function getPesos(){
+let getPesos = () =>{
 
     if (document.getElementById('money').value == "") {
         alert("Completa el espacio en blanco");
@@ -38,7 +37,7 @@ function getPesos(){
     }
 }
 
-function getDolars(){
+let getDolars = () =>{
     
     console.log("funcion getDolars " + dolar);
     
@@ -62,6 +61,7 @@ function getDolars(){
     objTotal.innerText = `Total con impuestos: AR$ ${total}`;
     }  
 }
+
 
 document.getElementById("moneda").addEventListener("click", function(){
     console.log("holis");

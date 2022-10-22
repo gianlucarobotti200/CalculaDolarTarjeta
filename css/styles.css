@@ -161,13 +161,9 @@ main section.flags {
   display: flex;
   justify-content: center;
 }
-main section.flags i {
-  padding-top: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+
 main section img {
-  width: 5rem;
+  width: 30%;
 }
 main section.data a{
   color: white;
@@ -178,10 +174,14 @@ main section.data {
 }
 main section.data form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: 1.5rem 0;
 }
-
+label{
+  font-size: 1rem;
+  margin: .25rem 0;
+}
 .cotizacion {
   color:grey;
   font-size: 0.9rem;
@@ -232,7 +232,7 @@ div.lista {
   flex-direction: column;
 }
 div.lista span{
-  margin: 5vh 0;
+  margin: 5vw 0;
 }
 
 footer {
