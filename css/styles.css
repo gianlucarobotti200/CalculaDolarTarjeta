@@ -175,12 +175,14 @@ main section.data {
 main section.data form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin: 1.5rem 0;
+  
 }
 label{
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin: .25rem 0;
+  padding-left: 1rem;
 }
 .cotizacion {
   color:grey;
@@ -227,12 +229,16 @@ main section.data span::after {
   -o-border-radius: 50px;
 }
 
-div.lista {
+ul.lista {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
 }
-div.lista span{
-  margin: 5vw 0;
+
+li {
+  margin: 3vw 0;
 }
 
 footer {
@@ -248,6 +254,10 @@ footer a{
 footer i{
   padding-top: 0.5rem;
   margin-left: 1rem;
+}
+
+span#perc::after{
+  content: none;
 }
 
 @media (min-width: 481px){

@@ -20,19 +20,98 @@ let getPesos = () =>{
         alert("Completa el espacio en blanco");
     } else {
         let pesos = ((parseFloat(document.getElementById('money').value))).toFixed(2);
-        let objPesos = document.getElementById("pesosinimp");
-        objPesos.innerText = `Pesos sin impuesto: AR$ ${pesos}`;
+        let objPesos = document.getElementById("pesosinimp$");
+        objPesos.innerText = `${pesos}`;
         console.log("funcion getPesos " + pesos);
 
         //IMPUESTO PAIS
-        let impPais = (pesos*.30).toFixed(2);
-        let objImpPais = document.getElementById("imppais");
-        objImpPais.innerText = `Impuesto país 30%: AR$ ${impPais}`;
+        let impPais = Number((pesos*.30).toFixed(2));
+        let objImpPais = document.getElementById("imppais$");
+        objImpPais.innerText = `${impPais}`;
 
+        console.log("Impuesto pais " + impPais)
         //RETENCION GANANCIAS
         let ret = (pesos*.45).toFixed(2);
-        let objRet = document.getElementById("ret");
-        objRet.innerText = `Retención del 45%: AR$ ${ret}`;
+        let objRet = document.getElementById("ret$");
+        objRet.innerText = `${ret}`;
+
+        
+        //PERCEPCION IIBB
+        let b = document.getElementById("provincia");
+        let valueProvincial = b.value;
+        let perc;
+        switch(valueProvincial){
+            case "1":
+                perc = 0;
+                break;
+            case "2":
+            case "3":
+                perc = Number((pesos*(provincias[1].tasa/100)).toFixed(2));
+                console.log("hola");
+                break;
+            case "4":
+                perc = number((pesos*(provincias[2].tasa/100)).toFixed(2));
+                break;
+            case "5":
+                perc = Number((pesos*(provincias[3].tasa/100)).toFixed(2));
+                break;
+            case "6":
+                perc = Number((pesos*(provincias[4].tasa/100)).toFixed(2));
+                break;
+            case "7":
+                perc = Number((pesos*(provincias[5].tasa/100)).toFixed(2));
+                break;
+            case "8":
+                perc = Number((pesos*(provincias[6].tasa/100)).toFixed(2));
+                break;
+            case "9":
+                perc = Number((pesos*(provincias[7].tasa/100)).toFixed(2));
+                break;
+        }
+
+        let objPerc = document.getElementById("perc$");
+        objPerc.innerText = `${perc}`;
+
+        //IMPUESTO SELLO
+
+        let impSello;
+        let a = document.getElementById("metodo-pago");
+        valueMetodoPago = a.value;
+
+        if(valueMetodoPago == 1){
+            impSello = (pesos*(.012)).toFixed(2);
+        } else {
+            impSello = 0;
+        }
+
+        let objImpSello = document.getElementById("sello$");
+        objImpSello.innerText = `${impSello}`
+
+        //TOTAL
+        let total = ((Number(pesos)+Number(impPais)+Number(ret)+Number(perc)+Number(impSello))).toFixed(2);
+        let objTotal = document.getElementById("total$");
+        objTotal.innerText = `${total}`;
+    }
+}
+
+let getDolars = () =>{
+      
+    console.log("funcion getDolars " + dolar);
+    
+    if (document.getElementById('money').value == "") {
+        alert("Completa el espacio en blanco");
+    } else {
+        let pesos = ((parseFloat(document.getElementById('money').value))*dolar).toFixed(2);
+        let objPesos = document.getElementById("pesosinimp$");
+        objPesos.innerText = `${pesos}`;
+    
+        let impPais = (pesos*.30).toFixed(2);
+        let objImpPais = document.getElementById("imppais$");
+        objImpPais.innerText = `${impPais}`;
+
+        let ret = (pesos*.45).toFixed(2);
+        let objRet = document.getElementById("ret$");
+        objRet.innerText = `${ret}`;
 
         //PERCEPCION IIBB
         let b = document.getElementById("provincia");
@@ -67,6 +146,9 @@ let getPesos = () =>{
                 break;
         }
 
+        let objPerc = document.getElementById("perc$");
+        objPerc.innerText = `${perc}`
+
         //IMPUESTO SELLO
 
         let impSello;
@@ -79,34 +161,13 @@ let getPesos = () =>{
             impSello = 0;
         }
 
-        let total = (Number(pesos)+Number(impPais)+Number(ret)+Number(perc)+Number(impSello));
-        let objTotal = document.getElementById("total");
-        objTotal.innerText = `Total con impuestos: AR$ ${total}`;
-    }
-}
+        let objImpSello = document.getElementById("sello$");
+        objImpSello.innerText = `${impSello}`
 
-let getDolars = () =>{
-      
-    console.log("funcion getDolars " + dolar);
-    
-    if (document.getElementById('money').value == "") {
-        alert("Completa el espacio en blanco");
-    } else {
-        let pesos = ((parseFloat(document.getElementById('money').value))*dolar).toFixed(2);
-        let objPesos = document.getElementById("pesosinimp");
-        objPesos.innerText = `Pesos sin impuesto: AR$ ${pesos}`;
-    
-        let impPais = (pesos*.30).toFixed(2);
-        let objImpPais = document.getElementById("imppais");
-        objImpPais.innerText = `Impuesto país 30%: AR$ ${impPais}`;
-
-        let ret = (pesos*.45).toFixed(2);
-        let objRet = document.getElementById("ret");
-        objRet.innerText = `Retención del 45%: AR$ ${ret}`;
-
+        //TOTAL
         let total = ((pesos*175)/100).toFixed(2);
-        let objTotal = document.getElementById("total");
-        objTotal.innerText = `Total con impuestos: AR$ ${total}`;
+        let objTotal = document.getElementById("total$");
+        objTotal.innerText = `${total}`;
     }  
 }
 
@@ -178,30 +239,29 @@ document.getElementById("provincia").addEventListener("change", function(){
     console.log(provincias);
     switch(valueProvincial){
         case "1":
-            impProvincial.innerText = `Percepción de Ingresos Brutos 0%`;
+            impProvincial.innerText = `0`;
             break;
         case "2":
         case "3":
-            impProvincial.innerText = `Percepción de Ingresos Brutos ${provincias[0].tasa}%`;
-            console.log("hola");
+            impProvincial.innerText = `${provincias[0].tasa}`;
             break;
         case "4":
-            impProvincial.innerText = `Percepción de Ingresos Brutos ${provincias[2].tasa}%`;
+            impProvincial.innerText = `${provincias[2].tasa}`;
             break;
         case "5":
-            impProvincial.innerText = `Percepción de Ingresos Brutos ${provincias[3].tasa}%`;
+            impProvincial.innerText = `${provincias[3].tasa}`;
             break;
         case "6":
-            impProvincial.innerText = `Percepción de Ingresos Brutos ${provincias[4].tasa}%`;
+            impProvincial.innerText = `${provincias[4].tasa}`;
             break;
         case "7":
-            impProvincial.innerText = `Percepción de Ingresos Brutos ${provincias[5].tasa}%`;
+            impProvincial.innerText = `${provincias[5].tasa}`;
             break;
         case "8":
-            impProvincial.innerText = `Percepción de Ingresos Brutos ${provincias[6].tasa}%`;
+            impProvincial.innerText = `${provincias[6].tasa}`;
             break;
         case "9":
-            impProvincial.innerText = `Percepción de Ingresos Brutos ${provincias[7].tasa}%`;
+            impProvincial.innerText = `${provincias[7].tasa}`;
             break;
     }
 })
