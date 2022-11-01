@@ -260,6 +260,10 @@ span#perc::after{
   content: none;
 }
 
+span#sello::after{
+  content: none;
+}
+
 @media (min-width: 481px){
   body {
     font-size: 1.5rem;

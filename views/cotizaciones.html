@@ -1,44 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Cotizaciones Hoy</title>
-   <link rel="stylesheet" href="../css/styles.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-   <script src="https://kit.fontawesome.com/162fed51d8.js" crossorigin="anonymous"></script>
-</head>
-<body>
-   <header>
-      <nav>
-        <div class="navbar">
-          <div class="container nav-container">
-            <input class="checkbox" type="checkbox" name="" id="" />
-            <div class="hamburger-lines">
-              <span class="line line1"></span>
-              <span class="line line2"></span>
-              <span class="line line3"></span>
-            </div>
-            <div class="menu-items">
-              <li><a href="../index.html">Home</a></li>
-              <li><a href="../views/cotizaciones.html">Cotización</a></li>
-              <li><a href="../views/impuestos.html">Impuestos</a></li>
-              <li><a href="../views/info.html">Más Info</a></li>
-              <li><a href="../views/sobremi.html">Contacto</a></li>
-            </div>
-          </div>
-        </div>
-      </nav>
-   </header>
-   <main>
 
-   </main>
-   <footer>
-      <p>Todos los derechos reservados a Gianluca Robotti</p>
-      <a href="https://github.com/gianlucarobotti200" target="_blank"><i class="fa-brands fa-github"></i></a>
-   </footer>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cotizaciones Hoy</title>
+	<link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/cotizaciones.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/162fed51d8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="navbar">
+				<div class="container nav-container">
+					<input class="checkbox" type="checkbox" name="" id="" />
+					<div class="hamburger-lines">
+						<span class="line line1"></span>
+						<span class="line line2"></span>
+						<span class="line line3"></span>
+					</div>
+					<div class="menu-items">
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="../views/cotizaciones.html">Cotización</a></li>
+						<li><a href="../views/impuestos.html">Impuestos</a></li>
+						<li><a href="../views/info.html">Más Info</a></li>
+						<li><a href="../views/sobremi.html">Contacto</a></li>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+        <label for="cotizacion">SELECCIONAR COTIZACIÓN</label>
+        <select name="cotizacion" id="cotizacion">
+			<option value="0">Seleccionar Moneda</option>
+            <option value="1">DÓLAR OFICIAL</option>
+            <option value="2">DÓLAR BLUE</option>
+            <option value="3">DÓLAR CCL</option>
+            <option value="4">DÓLAR TARJETA</option>
+            <option value="5">DÓLAR BOLSA</option>
+            <option value="6">DÓLAR TURISTA</option>
+            <option value="7">BITCOIN</option>
+        </select>
+        <article>
+            <h3 id="tipo-cambio">Dólar Oficial</h3>
+            <ul>
+				<li>COMPRA: $</li><span id="compra"></span>
+				<li>VENTA: $</li><span id="venta"></span>
+			</ul>
+        </article>
+	</main>
+	<footer>
+		<p>Todos los derechos reservados a Gianluca Robotti</p>
+		<a href="https://github.com/gianlucarobotti200" target="_blank"><i class="fa-brands fa-github"></i></a>
+	</footer>
+	<script src="../js/cotizaciones.js"></script>
 </body>
+
 </html>

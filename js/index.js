@@ -3,7 +3,8 @@ let dolar = 0;
 const listValues = async () => {
     //https://www.dolarsi.com/api/api.php?type=valoresprincipales Usar dps
     const dolarDia = await fetch('https://www.dolarsi.com/api/api.php?type=dolar');
-    const dolarObj = await dolarDia.json();;
+    console.log(dolarDia);
+    const dolarObj = await dolarDia.json();
     console.log("dolarDia: " + dolarObj[0].casa.compra)
     dolar = (parseFloat(dolarObj[0].casa.compra.replace(",", "."))).toFixed(2);
     let objDolar = document.getElementById("cotizacion");
@@ -272,8 +273,8 @@ document.getElementById("metodo-pago").addEventListener("change", function(){
     valueMetodoPago = e.value;
 
     if(valueMetodoPago == 1){
-        impSello.innerText = "Impuesto a los sellos 1,2%";
+        impSello.innerText = "1,2";
     } else {
-        impSello.innerText = "Impuesto a los sellos 0%";
+        impSello.innerText = "0";
     }
 })

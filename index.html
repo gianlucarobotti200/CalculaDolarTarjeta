@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>calculaDolar Argentina</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/modal.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
@@ -47,7 +48,7 @@
 				<label for="tipo-compra">Tipo de pago:
 					<select name="tipo-compra" id="tipo-compra">
 						<option value="1">Servicios digitales</option>
-						<option value="2"></option>
+						<option value="2">Compras en el exterior</option>
 						<option value="3"></option>
 					</select>
 				</label>
@@ -84,8 +85,8 @@
 				<li id="pesosinimp">Pesos sin impuesto: <span id="pesosinimp$">$</span></li>
 				<li id="imppais">Impuesto país 30%: <span id="imppais$">$</span></li>
 				<li id="ret">Retención Ganancias y BBPP 45%: <span id="ret$">$</span></li>
-				<li>Percepción de Ingresos Brutos %<span id="perc"></span>: $<span id="perc$"></span></li>
-				<li id="sello">Impuesto a los sellos 1,2%: <span id="sello$">$</span></li>
+				<li>Percepción de Ingresos Brutos <span id="perc">0</span>%: $<span id="perc$"></span></li>
+				<li>Impuesto a los sellos <span id="sello">0</span>%: <span id="sello$">$</span></li>
 				<li id="total">PRECIO FINAL: <span id="total$">$</span></li>
 			</ul>
 		</section>
