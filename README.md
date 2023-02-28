@@ -31,5 +31,3 @@ Si deseas contribuir al desarrollo de esta aplicación, puedes realizar un fork 
 ##Autor
 La aplicación ha sido desarrollada por Gianluca Robotti. Puedes contactar con el autor a través de su correo electrónico: gianlucarobotti200@gmail.com.
 
-##Licencia
-La aplicación se encuentra bajo licencia MIT. Puedes consultar los detalles de la licencia en el archivo LICENSE.
