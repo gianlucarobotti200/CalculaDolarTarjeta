@@ -45,13 +45,7 @@
 			<span id="cotizacion" class="cotizacion">Dólar Oficial hoy: Cargando...</span>
 			<br><a href="views/cotizaciones.html">Ver cotizaciones</a>
 			<form name="dolartospend" onsubmit="return false;">
-				<label for="tipo-compra">Tipo de pago:
-					<select name="tipo-compra" id="tipo-compra">
-						<option value="1">Servicios digitales</option>
-						<option value="2">Compras en el exterior</option>
-						<option value="3"></option>
-					</select>
-				</label>
+				
 				<label for="provincia">Seleccionar provincia:
 					<select name="provincia" id="provincia">
 						<option value="1">Ninguna de la lista</option>
@@ -72,22 +66,28 @@
 						<option value="3">Tarjeta Prepaga</option>
 					</select>
 				</label>
-				<label for="">
+				<label for="mas-de-300">+300U$D en el mes?
+					SI<input type="radio" name="mas-de-300" id="si">
+					NO<input type="radio" name="mas-de-300" id="no" checked>
+				</label>
+				<label for="moneda">
 					<select id="moneda">
 						<option value="1" type="reset">U$D</option>
 						<option value="2" type="reset">AR$</option>
+						<option value="3" type="reset">CLP$</option>
 					</select>
-					<input class="in-dollar" type="number" step=".01" min="0" id="money" name="money" placeholder="Ingresar dólares" onchange="getDolars()">
+					<input class="in-dollar" type="number" step=".01" min="0" id="money" name="money" placeholder="Ingresar dólares">
+					<button type="submit">Calcular</button>
 				</label>
 			</form>
 
 			<ul class="lista">
-				<li id="pesosinimp">Pesos sin impuesto: <span id="pesosinimp$">$</span></li>
-				<li id="imppais">Impuesto país 30%: <span id="imppais$">$</span></li>
-				<li id="ret">Retención Ganancias y BBPP 45%: <span id="ret$">$</span></li>
-				<li>Percepción de Ingresos Brutos <span id="perc">0</span>%: $<span id="perc$"></span></li>
-				<li>Impuesto a los sellos <span id="sello">0</span>%: $<span id="sello$"></span></li>
-				<li id="total">PRECIO FINAL: $<span id="total$"></span></li>
+				<li id="pesosinimp">Sin impuesto: <span id="valores"></span></li>
+				<li id="imppais">Imp país 30%: <span id="valores"></span></li>
+				<li id="ret">Ret. Gan. y BBPP <span id="ret">45</span>%: <span id="valores"></span></li>
+				<li>Perc. IIBB <span id="perc">0</span>%: <span id="valores"></span></li>
+				<li>Imp. Sellos <span id="sello">0</span>%: <span id="valores"></span></li>
+				<li id="total">PRECIO FINAL: <span id="total$"></span></li>
 			</ul>
 		</section>
 	</main>

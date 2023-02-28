@@ -189,7 +189,7 @@ label{
   font-size: 0.9rem;
 }
 
-select {
+select, button{
   background-color: #01407c;
   color: white;
   border-radius: 50px;
@@ -215,7 +215,7 @@ input {
   font-family: "Be Vietnam Pro", sans-serif;
 }
 
-main section.data span::after {
+main section.data li::after {
   content: "?";
   color: #014e96;
   border-radius: 50px;
