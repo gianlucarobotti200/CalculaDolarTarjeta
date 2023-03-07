@@ -122,6 +122,24 @@
         }
     })
 
+    let listaImpuestos = document.querySelectorAll(".imp");
+
+    listaImpuestos.forEach(impuesto => {
+        impuesto.classList.add("mostrarImp");
+    });
+
+    const botonDesplegable = document.getElementById("mostrarImp")
+    botonDesplegable.addEventListener("click", ()=>{
+        listaImpuestos.forEach(impuesto => {
+            impuesto.classList.toggle("mostrarImp");
+            if(botonDesplegable.innerText == "Mostrar impuestos "){
+                botonDesplegable.innerHTML = `Ocultar impuestos <i class="fa-solid fa-arrow-up"></i>`
+            } else{
+                botonDesplegable.innerHTML = `Mostrar impuestos <i class="fa-sharp fa-solid fa-arrow-down"></i>`
+            }
+        });
+    })
+
 })()
 
 

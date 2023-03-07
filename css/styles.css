@@ -255,6 +255,14 @@ li {
   margin: 3vw 0;
 }
 
+.mostrarImp{
+  display: none;
+}
+
+.cambiarTexto{
+  content: "Ocultar lista"
+}
+
 footer {
   display: flex;
   justify-content:center;

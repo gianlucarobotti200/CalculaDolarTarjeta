@@ -78,15 +78,16 @@
 					<button type="submit">Calcular</button>
 				</label>
 			</form>
-
+			<button id="mostrarImp">Mostrar impuestos <i class="fa-sharp fa-solid fa-arrow-down"></i></button>
 			<ul class="lista">
-				<li id="pesosinimp">Sin impuesto: <span id="valores"></span></li>
-				<li id="imppais">Imp país 30%: <span id="valores"></span></li>
-				<li id="ret">Ret. Gan. y BBPP <span id="ret">45</span>%: <span id="valores"></span></li>
-				<li>Perc. IIBB <span id="perc">0</span>%: <span id="valores"></span></li>
-				<li>Imp. Sellos <span id="sello">0</span>%: <span id="valores"></span></li>
+				<li id="pesosinimp" class="imp">Sin impuesto: <span id="valores"></span></li>
+				<li id="imppais" class="imp">Imp país 30%: <span id="valores"></span></li>
+				<li id="ret" class="imp">Ret. Gan. y BBPP <span id="ret">45</span>%: <span id="valores"></span></li>
+				<li class="imp">Perc. IIBB <span id="perc">0</span>%: <span id="valores"></span></li>
+				<li class="imp">Imp. Sellos <span id="sello">0</span>%: <span id="valores"></span></li>
 				<li id="total">PRECIO FINAL: <span id="total$"></span></li>
 			</ul>
+			
 		</section>
 	</main>
 
