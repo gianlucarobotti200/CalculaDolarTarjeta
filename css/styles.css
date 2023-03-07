@@ -181,7 +181,7 @@ main section.data form {
 }
 label{
   font-size: 0.8rem;
-  margin: .25rem 0;
+  margin: .60rem 0;
   padding-left: 1rem;
 }
 .cotizacion {
@@ -229,6 +229,20 @@ main section.data li::after {
   -o-border-radius: 50px;
 }
 
+label#mas-de-300::after{
+  content: "?";
+  color: #014e96;
+  border-radius: 50px;
+  background-color: grey;
+  width: 3rem;
+  margin-left: 0.5rem;
+  padding: 0 0.4rem;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
 ul.lista {
   display: flex;
   flex-direction: column;
@@ -243,7 +257,7 @@ li {
 
 footer {
   display: flex;
-  justify-content: center;
+  justify-content:center;
 }
 footer p {
   font-size: 10px;

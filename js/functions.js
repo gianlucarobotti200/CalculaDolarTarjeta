@@ -22,8 +22,9 @@ let calculateRetGanBPP = (value, moreThan300) => {
 
 }
 
+
 let calculatePercIIBB = (value, provinceNum,provincePercent) =>{
-    
+
     switch(provinceNum){
         case "1":
             provincePercent.innerText = 0;
