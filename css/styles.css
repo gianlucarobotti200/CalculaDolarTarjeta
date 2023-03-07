@@ -182,7 +182,7 @@ main section.data form {
 label{
   font-size: 0.8rem;
   margin: .60rem 0;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 .cotizacion {
   color:grey;
@@ -304,12 +304,14 @@ span#sello::after{
     color:grey;
     font-size: 1.5rem;
   }
+  
 }
 
 @media (max-width: 380px){
   body{
     font-size: 0.7rem;
   }
+ 
 }
 
 @media (max-width: 300px){
@@ -328,4 +330,5 @@ span#sello::after{
     color: black;
     padding-left: .5rem;
   }
+  
 }
