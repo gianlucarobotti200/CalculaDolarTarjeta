@@ -1,16 +1,20 @@
 (()=>{
     
     let dollar;
+    let chileanPeso;
 
     const listValues = async () => {
         //https://www.dolarsi.com/api/api.php?type=valoresprincipales Usar dps
         const dolarDia = await fetch('https://www.dolarsi.com/api/api.php?type=dolar');
-    
+        const chileanPesoDia = await fetch('https://www.dolarsi.com/api/api.php?type=chileno')
+
+        const chileanPesoObj = await chileanPesoDia.json();
         const dolarObj = await dolarDia.json();
         console.log("dolarDia: " + dolarObj[0].casa.compra)
         
         dollar = (parseFloat(dolarObj[0].casa.compra.replace(",", "."))).toFixed(2);
-        
+        chileanPeso = (parseFloat(chileanPesoObj[2].casa.venta.replace(",", "."))).toFixed(3)
+        console.log(chileanPeso);
         let objDolar = document.getElementById("cotizacion");
         objDolar.innerText = `Dólar Oficial hoy: AR$ ${dollar}`  
     };
@@ -94,9 +98,23 @@
 
     }
 
+    let calculateChilean = () =>{
+        
+        const provinceNum = document.getElementById("provincia").value;
+
+        const payMethodNum = document.getElementById("metodo-pago").value;
+
+        let moreThan300 = document.getElementById("si").checked;
+        
+        const inputValue = Number(document.getElementById("money").value).toFixed(3);
+
+        const valueList = document.querySelectorAll("#valores");
+    }
+
     let calculateButton = document.querySelector("button");
     let inputMoney = document.querySelector("#money");
     let currencyInputStatus = document.querySelector("#moneda");
+    const banderaArg = '\ud83c\udde6\ud83c\udde7'
 
     currencyInputStatus.addEventListener("change", function(){
         const inputState = this.value;
@@ -106,8 +124,11 @@
             inputMoney.setAttribute("placeholder", "Ingresar dólares");
             
         } else if(inputState == '2'){
-            inputMoney.value = ""
-            inputMoney.setAttribute("placeholder", "Ingresar pesos");
+            inputMoney.value = "";
+            inputMoney.setAttribute("placeholder", "Ingresar pesos ARS");
+        } else if(inputState == '3'){
+            inputMoney.value = "";
+            inputMoney.setAttribute("placeholder", "Ingresar pesos CLP");
         }
     })
 
@@ -129,17 +150,19 @@
     });
 
     const botonDesplegable = document.getElementById("mostrarImp")
+    let ulLista = document.querySelector("#ullista");
+
     botonDesplegable.addEventListener("click", ()=>{
+        ulLista.classList.toggle("despliegue");
+        if(botonDesplegable.innerHTML == `Mostrar impuestos <i class="fa-sharp fa-solid fa-arrow-down"></i>`){
+            botonDesplegable.innerHTML = `Ocultar impuestos <i class="fa-solid fa-arrow-up"></i>`
+        } else{
+            botonDesplegable.innerHTML = `Mostrar impuestos <i class="fa-sharp fa-solid fa-arrow-down"></i>`
+        }
         listaImpuestos.forEach(impuesto => {
             impuesto.classList.toggle("mostrarImp");
-            if(botonDesplegable.innerText == "Mostrar impuestos "){
-                botonDesplegable.innerHTML = `Ocultar impuestos <i class="fa-solid fa-arrow-up"></i>`
-            } else{
-                botonDesplegable.innerHTML = `Mostrar impuestos <i class="fa-sharp fa-solid fa-arrow-down"></i>`
-            }
         });
     })
-
 })()
 
 
