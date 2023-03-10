@@ -62,8 +62,8 @@ body {
   display: block;
   height: 32px;
   width: 32px;
-  top: 20px;
-  left: 20px;
+  top: 14px;
+  left: 7px;
   z-index: 5;
   opacity: 0;
   cursor: pointer;
@@ -269,6 +269,10 @@ li {
   display: none;
 }
 
+.imp{
+  color: grey
+}
+
 footer {
   display: flex;
   justify-content:center;
@@ -325,7 +329,18 @@ span#sello::after{
   body{
     font-size: 0.7rem;
   }
- 
+  label{
+    padding-left: 0.4rem;
+  }
+}
+
+@media (max-width: 360px){
+  body{
+    font-size: 0.6rem;
+  }
+  label{
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 300px){
@@ -344,5 +359,7 @@ span#sello::after{
     color: black;
     padding-left: .5rem;
   }
-  
+  label{
+    padding-left: 1%;
+  }
 }
