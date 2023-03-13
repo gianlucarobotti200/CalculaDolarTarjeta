@@ -4,29 +4,38 @@
 
     const listValues = async () => {
 
-        //https://www.dolarsi.com/api/api.php?type=valoresprincipales Usar dps
-        const dolarDia = await fetch('https://www.dolarsi.com/api/api.php?type=dolar');
-        const chileanPesoDia = await fetch('https://www.dolarsi.com/api/api.php?type=chileno');
-        const uruguayanPesoDia = await fetch('https://www.dolarsi.com/api/api.php?type=uruguayo');
-        const realDia = await fetch('https://www.dolarsi.com/api/api.php?type=real')
-        const euroDia = await fetch('https://www.dolarsi.com/api/api.php?type=euro')
+        const data = JSON.parse(localStorage.getItem('currencies'));
+        const lastUpdate = localStorage.getItem('lastUpdate');
+        const now = new Date().getTime();
 
-        const dolarObj = await dolarDia.json();
-        const chileanPesoObj = await chileanPesoDia.json();
-        const uruguayanPesoObj = await uruguayanPesoDia.json();
-        const realObj = await realDia.json();
-        const euroObj = await euroDia.json();
-        
-        currencies = {
-            
-            argentinianPeso: 1,
-            dollar: (parseFloat(dolarObj[0].casa.compra.replace(",", "."))).toFixed(2),
-            chileanPeso: (parseFloat(chileanPesoObj[7].casa.venta.replace(",", "."))).toFixed(3),
-            uruguayanPeso:  (parseFloat(uruguayanPesoObj[2].casa.venta.replace(",", "."))).toFixed(3),
-            real: (parseFloat(realObj[2].casa.venta.replace(",", "."))).toFixed(3),
-            euro: (parseFloat(euroObj[2].casa.venta.replace(",", "."))).toFixed(3)
-            
-        }   
+        if (data && lastUpdate && (now - lastUpdate) < 86400000) { // 86400000 ms = 24 hours
+            currencies = data;
+        } else {
+            const dolarDia = await fetch('https://www.dolarsi.com/api/api.php?type=dolar');
+            const chileanPesoDia = await fetch('https://www.dolarsi.com/api/api.php?type=chileno');
+            const uruguayanPesoDia = await fetch('https://www.dolarsi.com/api/api.php?type=uruguayo');
+            const realDia = await fetch('https://www.dolarsi.com/api/api.php?type=real')
+            const euroDia = await fetch('https://www.dolarsi.com/api/api.php?type=euro')
+
+            const dolarObj = await dolarDia.json();
+            const chileanPesoObj = await chileanPesoDia.json();
+            const uruguayanPesoObj = await uruguayanPesoDia.json();
+            const realObj = await realDia.json();
+            const euroObj = await euroDia.json();
+
+            currencies = {
+                argentinianPeso: 1,
+                dollar: (parseFloat(dolarObj[0].casa.compra.replace(",", "."))).toFixed(2),
+                chileanPeso: (parseFloat(chileanPesoObj[7].casa.venta.replace(",", "."))).toFixed(3),
+                uruguayanPeso:  (parseFloat(uruguayanPesoObj[2].casa.venta.replace(",", "."))).toFixed(3),
+                real: (parseFloat(realObj[2].casa.venta.replace(",", "."))).toFixed(3),
+                euro: (parseFloat(euroObj[2].casa.venta.replace(",", "."))).toFixed(3)
+            };
+
+            localStorage.setItem('currencies', JSON.stringify(currencies));
+            localStorage.setItem('lastUpdate', now);
+        }
+
         console.log(currencies);
         let objDolar = document.getElementById("cotizacion");
         objDolar.innerText = `Dólar Oficial hoy: AR$ ${currencies.dollar}`;  
