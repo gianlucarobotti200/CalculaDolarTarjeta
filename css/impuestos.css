@@ -1,5 +1,6 @@
 main{
-    padding:10%
+    padding:10%;
+    height: 100%
 }
 
 p, li{
@@ -8,6 +9,10 @@ p, li{
 
 article{
     padding: 5% 0;
+}
+
+i{
+    font-size: 1rem;
 }
 
 a{

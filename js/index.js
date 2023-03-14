@@ -4,10 +4,15 @@
 
     const listValues = async () => {
 
+        // Primero, verificamos si ya hay datos en la memoria local del dispositivo.
+        // Si es así y los datos tienen menos de 24 horas, los utilizamos en lugar de hacer una nueva solicitud.
+        // Si no, hacemos una solicitud al servidor y guardamos los datos en la memoria local del dispositivo.
         const data = JSON.parse(localStorage.getItem('currencies'));
         const lastUpdate = localStorage.getItem('lastUpdate');
         const now = new Date().getTime();
 
+        // Si no hay datos almacenados o han pasado más de 24 horas desde la última actualización,
+        // hacemos una solicitud al servidor para obtener las tasas de cambio más recientes.
         if (data && lastUpdate && (now - lastUpdate) < 86400000) { // 86400000 ms = 24 hours
             currencies = data;
         } else {
@@ -22,7 +27,8 @@
             const uruguayanPesoObj = await uruguayanPesoDia.json();
             const realObj = await realDia.json();
             const euroObj = await euroDia.json();
-
+            
+            // Una vez que tenemos los datos, los guardamos en un objeto y los almacenamos en la memoria local del dispositivo.
             currencies = {
                 argentinianPeso: 1,
                 dollar: (parseFloat(dolarObj[0].casa.compra.replace(",", "."))).toFixed(2),
