@@ -7,7 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>calculaDolar Argentina</title>
 	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/modal.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
@@ -41,7 +40,9 @@
 		</section>
 
 		<section class="data">
-			<span id="cotizacion" class="cotizacion">Dólar Oficial hoy: Cargando...</span>
+			<span id="cotizacion" class="cotizacion">Dólar Oficial hoy: Cargando...</span><br>
+			<span id="cotizacionBlue" class="cotizacion">Dólar Blue hoy: Cargando...</span>
+			
 			<form name="dolartospend" onsubmit="return false;">
 				
 				<label for="provincia">Seleccionar provincia:
@@ -72,7 +73,7 @@
 					<select id="moneda">
 						<option value="1" type="reset">U$D</option>
 						<option value="2" type="reset">AR$</option>
-						<option value="3" type="reset">CH$</option>
+						<option value="3" type="reset">CL$</option>
 						<option value="4" type="reset">UY$</option>
 						<option value="5" type="reset">R$</option>
 						<option value="6" type="reset">EU€</option>

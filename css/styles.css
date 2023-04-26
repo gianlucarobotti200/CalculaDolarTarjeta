@@ -215,34 +215,6 @@ input {
   font-family: "Be Vietnam Pro", sans-serif;
 }
 
-main section.data li::after {
-  content: "?";
-  color: #014e96;
-  border-radius: 50px;
-  background-color: grey;
-  width: 3rem;
-  margin-left: 0.5rem;
-  padding: 0 0.4rem;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
-}
-
-label#mas-de-300::after{
-  content: "?";
-  color: #014e96;
-  border-radius: 50px;
-  background-color: grey;
-  width: 3rem;
-  margin-left: 0.5rem;
-  padding: 0 0.4rem;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
-}
-
 ul.lista {
   display: flex;
   flex-direction: column;
@@ -286,14 +258,6 @@ footer a{
 footer i{
   padding-top: 0.5rem;
   margin-left: 1rem;
-}
-
-span#perc::after{
-  content: none;
-}
-
-span#sello::after{
-  content: none;
 }
 
 @media (min-width: 481px){
