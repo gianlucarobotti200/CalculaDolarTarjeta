@@ -3,8 +3,10 @@ main{
     height: 100%
 }
 
+
 p, li{
     color: #FAFAFA;
+    
 }
 
 article{
@@ -17,4 +19,14 @@ i{
 
 a{
     color: #FAFAFA;
+}
+
+@media (min-width: 1279px){
+    p, li{
+        font-size:1.5rem;
+    }
+
+    h3{
+        font-size: 2rem;
+    }
 }

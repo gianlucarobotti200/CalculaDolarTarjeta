@@ -15,7 +15,7 @@
 
 <body>
 	<header>
-		<nav>
+		<nav class="mobile">
 			<div class="navbar">
 				<div class="container nav-container">
 					<input class="checkbox" type="checkbox" name="" id="" />
@@ -33,6 +33,13 @@
 				</div>
 			</div>
 		</nav>
+
+		<nav class="desktop">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="views/impuestos.html">Impuestos</a></li>
+			<li><a href="views/info.html">Más Info</a></li>
+			<li><a href="https://github.com/gianlucarobotti200" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/gianluca-robotti/"target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+		</nav>
 	</header>
 	<main>
 		<section class="flags">
@@ -42,9 +49,9 @@
 		<section class="data">
 			<span id="cotizacion" class="cotizacion">Dólar Oficial hoy: Cargando...</span><br>
 			<span id="cotizacionBlue" class="cotizacion">Dólar Blue hoy: Cargando...</span>
-			
+
 			<form name="dolartospend" onsubmit="return false;">
-				
+
 				<label for="provincia">Seleccionar provincia:
 					<select name="provincia" id="provincia">
 						<option value="1">Ninguna de la lista</option>
@@ -78,7 +85,8 @@
 						<option value="5" type="reset">R$</option>
 						<option value="6" type="reset">EU€</option>
 					</select>
-					<input class="in-dollar" type="number" step=".01" min="0" id="money" name="money" placeholder="Ingresar USD">
+					<input class="in-dollar" type="number" step=".01" min="0" id="money" name="money"
+						placeholder="Ingresar USD">
 					<button type="submit">Calcular</button>
 				</label>
 			</form>
@@ -91,11 +99,14 @@
 				<li class="imp">Imp. Sellos <span id="sello">0</span>%: <span id="valores"></span></li>
 				<li id="total">PRECIO FINAL: <span id="total$"></span></li>
 			</ul>
-			
+
 		</section>
 	</main>
 	<footer>
-		<p>Todos los derechos reservados a Gianluca Robotti <a href="https://github.com/gianlucarobotti200" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/gianluca-robotti/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></p>
+		<p>Todos los derechos reservados a Gianluca Robotti <a href="https://github.com/gianlucarobotti200"
+				target="_blank"><i class="fa-brands fa-github"></i></a><a
+				href="https://www.linkedin.com/in/gianluca-robotti/" target="_blank"><i
+					class="fa-brands fa-linkedin"></i></a></p>
 	</footer>
 	<script src="js/index.js"></script>
 	<script src="js/functions.js"></script>

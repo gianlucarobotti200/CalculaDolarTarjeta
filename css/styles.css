@@ -14,6 +14,10 @@ body {
   font-family: "Be Vietnam Pro", sans-serif;
 }
 
+nav.desktop {
+  display: none;
+}
+
 .container {
   max-width: 1050px;
   width: 90%;
@@ -47,8 +51,8 @@ body {
   padding: 0.7rem;
 }
 
-.navbar .nav-container a:hover{
-    font-weight: bolder;
+.navbar .nav-container a:hover {
+  font-weight: bolder;
 }
 
 .nav-container {
@@ -124,23 +128,23 @@ body {
   font-weight: 500;
 }
 
-.nav-container input[type="checkbox"]:checked ~ .menu-items {
+.nav-container input[type="checkbox"]:checked~.menu-items {
   transform: translateX(0);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+.nav-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
   transform: rotate(45deg);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+.nav-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
   transform: scaleY(0);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+.nav-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
   transform: rotate(-45deg);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .logo{
+.nav-container input[type="checkbox"]:checked~.logo {
   display: none;
 }
 
@@ -148,10 +152,12 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
 header img {
   width: 3rem;
 }
-main{
+
+main {
   height: 85vh;
 }
 
@@ -165,31 +171,37 @@ main section.flags {
 main section img {
   width: 30%;
 }
-main section.data a{
+
+main section.data a {
   color: white;
 }
+
 main section.data {
   margin: 0 1.5rem;
   text-align: center;
 }
+
 main section.data form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 1.5rem 0;
-  
-}
-label{
-  font-size: 0.8rem;
-  margin: .60rem 0;
-  padding-left: 0.5rem;
-}
-.cotizacion {
-  color:grey;
-  font-size: 0.9rem;
+
 }
 
-select, button{
+label {
+  margin: .60rem 0;
+  padding-left: 0.5rem;
+  font-size: 3vw;
+}
+
+.cotizacion {
+  color: grey;
+  font-size: 3vw;
+}
+
+select,
+button {
   background-color: #01407c;
   color: white;
   border-radius: 50px;
@@ -201,7 +213,8 @@ select, button{
   font-family: "Be Vietnam Pro", sans-serif;
 }
 
-input.change:hover, input.change:focus{
+input.change:hover,
+input.change:focus {
   background: var(--blueleft);
 }
 
@@ -229,108 +242,208 @@ ul.lista {
   background-color: #01407c;
 }
 
-.despliegue{
-  margin-top: 25%;
+.despliegue {
+  margin-top: 20vw;
 }
 
 li {
-  margin: 3.5vw 0;
+  margin: 3vw 0;
+  font-size: 3vw;
 }
 
-.mostrarImp{
+.mostrarImp {
   display: none;
 }
 
-.imp{
+.imp {
   color: grey
 }
 
 footer {
   display: flex;
-  justify-content:center;
+  justify-content: center;
+  font-size: 0.5rem;
 }
-footer p {
-  font-size: 10px;
-}
-footer a{
+
+footer a {
   color: white;
 }
-footer i{
+
+footer i {
   padding-top: 0.5rem;
   margin-left: 1rem;
 }
 
-@media (min-width: 481px){
-  body {
-    font-size: 1.5rem;
+@media (min-height: 720px) {
+
+  li {
+    margin: 3.3vw 0;
+    font-size: 3vw;
   }
 
-  input {
-    font-size: 1rem;
-  }
-
-  div.lista span{
-    margin: 4vh 0;
-  }
-  main section.data form label input.in-dollar {
-    margin-left: 0.5rem;
-    width: 60%;
+  ul.lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
     border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    background-color: #01407c;
+  }
+
+}
+
+@media (max-height: 481px) {
+  img {
+    width: 2%;
+    height: 2%;
+  }
+
+  body {
+    font-size: 1vw;
+  }
+
+  li {
+    margin: 3vw 0;
+    font-size: 2vw;
+  }
+
+  label {
+    margin: .3rem 0;
+    padding-left: 0.5rem;
+    font-size: 3vw;
+  }
+
+  select,
+  button {
+    background-color: #01407c;
+    color: white;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
     border-style: none;
-    background-color: white;
-    color: black;
-    padding-left: 1rem;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 3vw;
   }
 
-  .cotizacion {
-    color:grey;
-    font-size: 1.5rem;
-  }
-  
-}
-
-@media (max-width: 380px){
-  body{
-    font-size: 0.7rem;
-  }
-  label{
-    padding-left: 0.4rem;
-  }
-}
-
-@media (max-width: 360px){
-  body{
-    font-size: 0.6rem;
-  }
-  label{
-    padding-left: 0;
-  }
-}
-
-@media (max-width: 300px){
-  body{
-    font-size: 0.6rem;
-  }
-  section.flags img {
-    width: 3.5rem;
-  }
   input {
     margin-left: 0.5rem;
-    width: 7.6rem;
     border-radius: 50px;
     border-style: none;
     background-color: white;
     color: black;
     padding-left: .5rem;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 3vw;
   }
-  label{
-    padding-left: 1%;
+
+  .despliegue {
+    margin-top: 5vw;
   }
 }
 
-@media (max-height: 690px){
+@media (min-width: 1279px) {
+  nav.mobile {
+    display: none;
+  }
+
+  nav.desktop {
+    display: flex;
+    justify-content: center;
+  }
+
+  header {
+    background-color: #01407c;
+    list-style: none;
+    box-shadow: 0 0 10px 0 black;
+    display: block;
+  }
+
+  header i{
+    margin: 0 2rem;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
   li {
-    margin: 2vw 0;
+    margin: 0 3rem;
+    font-size: 2rem;
+  }
+
+  section.flags img {
+    width: 10vw;
+  }
+
+  .cotizacion {
+    color: grey;
+    font-size: 1.5rem;
+  }
+
+  main section.data form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+
+  label {
+    margin: .60rem 0;
+    padding-left: 0.5rem;
+    font-size: 2rem;
+  }
+
+  input{
+    font-size: 1.5rem;
+  }
+  select, button {
+    background-color: #01407c;
+    color: white;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-style: none;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 2rem;
+  }
+
+  .despliegue{
+    margin: 10vh 0;
+  }
+
+  main section.data {
+    margin: 0 20vw;
+    text-align: center;
+  }
+
+  ul.lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    background-color: #01407c;
+  }
+
+  ul.lista li{
+    font-size: 2rem;
+  }
+
+  footer{
+    font-size: 1rem;
   }
 }
