@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 :root {
   --blueleft: linear-gradient(to left, #014e96, #0073df);
   --blueright: linear-gradient(to right, #f46b45, #eea849);
@@ -348,7 +349,8 @@ footer i {
   }
 }
 
-@media (min-width: 1279px) {
+@media (min-width: 768px) {
+
   nav.mobile {
     display: none;
   }
@@ -374,8 +376,8 @@ footer i {
   }
 
   li {
-    margin: 0 3rem;
-    font-size: 2rem;
+    margin: 1% 3rem;
+    font-size: 1rem;
   }
 
   section.flags img {
@@ -384,24 +386,24 @@ footer i {
 
   .cotizacion {
     color: grey;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   main section.data form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
   }
 
   label {
     margin: .60rem 0;
     padding-left: 0.5rem;
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   input{
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   select, button {
     background-color: #01407c;
@@ -413,7 +415,7 @@ footer i {
     -o-border-radius: 50px;
     border-style: none;
     font-family: "Be Vietnam Pro", sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   .despliegue{
@@ -421,7 +423,7 @@ footer i {
   }
 
   main section.data {
-    margin: 0 20vw;
+    margin: 0 35vh;
     text-align: center;
   }
 
@@ -440,7 +442,7 @@ footer i {
   }
 
   ul.lista li{
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
 
   footer{
