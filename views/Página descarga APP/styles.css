@@ -24,6 +24,8 @@ body {
 h1 {
     display: flex;
     flex-direction: column;
+    font-size: 100%;
+    padding: 0 5%;
 }
 
 img {
