@@ -59,6 +59,12 @@ button:hover{
     cursor: pointer;
 }
 
+button.volver{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
 h5{
     color: grey;
 }
