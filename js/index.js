@@ -32,7 +32,7 @@
             currencies = {
                 argentinianPeso: 1,
                 dollar: (parseFloat(dolarObj[0].casa.compra.replace(",", "."))).toFixed(2),
-                dollarBlue: (parseFloat(dolarObj[1].casa.venta.replace(",", "."))).toFixed(2),
+                dollarBlue: parseFloat(dolarObj[1].casa.venta.replace(".", "")),
                 chileanPeso: (parseFloat(chileanPesoObj[7].casa.venta.replace(",", "."))).toFixed(3),
                 uruguayanPeso: (parseFloat(uruguayanPesoObj[2].casa.venta.replace(",", "."))).toFixed(3),
                 real: (parseFloat(realObj[2].casa.venta.replace(",", "."))).toFixed(3),

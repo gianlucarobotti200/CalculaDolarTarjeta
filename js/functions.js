@@ -7,14 +7,14 @@ let calculateRetGanBPP = (value, moreThan300) => {
     
     let retGanBBPP;
     if(moreThan300){
-        retGanBBPP = Number(value*0.7.toFixed(3));
-        document.querySelector("span#ret").innerText = "70";
+        retGanBBPP = Number(value*0.35.toFixed(3));
+        document.querySelector("span#ret").innerText = "35";
         //valueList[2].innerText = `$${retGanBBPP}`;
 
         return retGanBBPP;
     } else{
-        retGanBBPP = Number(value*0.45.toFixed(3));
-        document.querySelector("span#ret").innerText = "45";
+        retGanBBPP = Number(value*0.30.toFixed(3));
+        document.querySelector("span#ret").innerText = "30";
         //valueList[2].innerText = `$${retGanBBPP}`;
 
         return retGanBBPP;
